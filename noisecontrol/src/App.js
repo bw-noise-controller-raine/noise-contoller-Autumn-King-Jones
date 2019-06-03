@@ -8,11 +8,19 @@ class App extends React.Component {
    this.state = {
     classes: [],
     class:{
-      name:'',
-      number:''
+      classroom_name:'',
+      score:0,
+      highest_score:0
     }
    }
  }
+
+componentDidMount() {
+  axios
+  .get('https://noise-controller.herokuapp.com/api/auth')
+  .then(res => this.setState({ classes: res.data}))
+  .catch(err => console.log(err))
+}
 
 
 render() {

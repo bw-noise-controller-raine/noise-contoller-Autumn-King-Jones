@@ -7,11 +7,33 @@ class Form extends React.Component {
         this.state = {
             classes: props.classes,
             NewClass: {
-            name: '',
-            number: ''
+            classroom_name: '',
+            score: '',
+            highest_score:'',
             } 
-        }
+        };
     }
+
+addClass = (e, class) => {
+    e.preventDefault();
+    axios
+    .post('https://noise-controller.herokuapp.com/api/auth/register',{
+      classroom_name:'',
+      score:'',
+      hghest_score:''
+    })
+    .then(res =>{this.setState({
+        classes: res.data
+    })})
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+inputHandler = e => {
+    this.setState({ [e.target.classroom_name]: e.target.value })
+}
+
 
     changeHandler = e => {
         this.setState({
