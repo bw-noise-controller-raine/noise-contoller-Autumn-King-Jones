@@ -5,7 +5,7 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            classes: props.classes,
+            Classes: props.Classes,
             NewClass: {
             classroom_name: '',
             score: '',
@@ -14,13 +14,13 @@ class Form extends React.Component {
         };
     }
 
-addClass = (e, class) => {
+    addClass = (e) => {
     e.preventDefault();
     axios
     .post('https://noise-controller.herokuapp.com/api/auth/register',{
       classroom_name:'',
       score:'',
-      hghest_score:''
+      highest_score:''
     })
     .then(res =>{this.setState({
         classes: res.data
@@ -37,7 +37,7 @@ inputHandler = e => {
 
     changeHandler = e => {
         this.setState({
-            class: {
+            Class: {
                 [e.target.name]: e.target.value
             }
         })

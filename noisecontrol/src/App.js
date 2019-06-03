@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios'
 import './App.css';
+import {Route} from 'react-router-dom'
 
 class App extends React.Component {
  constructor(){
    super();
    this.state = {
     classes: [],
-    class:{
+    Class:{
       classroom_name:'',
       score:0,
       highest_score:0
@@ -26,7 +27,8 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
-     <h1>hi</h1> 
+     <Route path ='/'/>
+     <Route exact path ='/'/>
     </div>
   );
 }
