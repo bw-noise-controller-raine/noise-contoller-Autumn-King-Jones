@@ -23,3 +23,46 @@ const initialState = {
     classesDeleted: false,
 };
 
+export const classReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOGIN:
+            return {
+                ...state,
+                isLoggingIn: true,
+                error: ''
+            };
+        case SUCCESS:
+            return {
+                ...state,
+                isLoggedIn: false
+            };
+
+        case FETCHING_CLASSES:
+            return {
+                ...state,
+                fetchignClasses: true,
+                classes: action.payload
+            };
+
+        case FETCHING_SUCCESS:
+            console.log(action.payload);
+            return {
+                ...state,
+                fetchingClasses: false,
+                classes: action.payload
+            };
+
+        case FETCHING_FAILURE:
+            console.log(action.payload);
+            return {
+                ...state,
+                fetchingClasses: false,
+                error: true
+            }
+
+        default:
+            return state;
+
+
+    }
+}
