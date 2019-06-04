@@ -23,7 +23,7 @@ const initialState = {
     classesDeleted: false,
 };
 
-export const classReducer = (state = initialState, action) => {
+const classReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN:
             return {
@@ -66,3 +66,5 @@ export const classReducer = (state = initialState, action) => {
 
     }
 }
+
+export default classReducer;
