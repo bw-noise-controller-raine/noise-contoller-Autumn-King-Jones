@@ -23,7 +23,7 @@ class LogIn extends React.Component {
     login = e => {
         e.preventDefault();
         this.props.login(this.state.credentials).then(() => {
-            this.props.history.push('/protected');
+            this.props.history.push('/');
         })
     };
 
@@ -31,25 +31,25 @@ class LogIn extends React.Component {
         return (
             <form onSubmit={this.login}>
                 <input
-                type = 'text'
-                name = 'username'
-                value = {this.state.credentials.username}
-                onChange = {this.changeHandler}
+                    type='text'
+                    name='username'
+                    value={this.state.credentials.username}
+                    onChange={this.changeHandler}
                 />
 
                 <input
-                 type = 'password'
-                 name = 'password'
-                 value = {this.state.credentials.password}
-                 onChange = {this.changeHandler}
-                 />
-            <button>
-                {this.props.isLoggedIn ? (
-                    <Loader type = 'ThreeDots' color = 'mediumpurple' height = '10' width = '20' />
-                ):(
-                    'Log In'
-                )}
-                </button> 
+                    type='password'
+                    name='password'
+                    value={this.state.credentials.password}
+                    onChange={this.changeHandler}
+                />
+                <button>
+                    {this.props.isLoggedIn ? (
+                        <Loader type='ThreeDots' color='mediumpurple' height='10' width='20' />
+                    ) : (
+                            'Log In'
+                        )}
+                </button>
             </form>
         )
     }
@@ -61,5 +61,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {login}
+    { login }
 )(LogIn)

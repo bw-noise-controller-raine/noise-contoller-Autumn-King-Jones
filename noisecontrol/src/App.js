@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios'
 import './App.css';
-import {Route} from 'react-router-dom'
+import {Route} from 'react-router-dom';
+import LogIn from './autherization/LogIn';
 
 class App extends React.Component {
  constructor(){
@@ -27,7 +28,7 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
-     <Route path ='/'/>
+     <Route path ='/' component = {LogIn} />
      <Route exact path ='/'/>
     </div>
   );
