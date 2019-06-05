@@ -2,20 +2,10 @@ import React from 'react';
 import axios from 'axios'
 import './App.css';
 import {Route} from 'react-router-dom';
-import LogIn from './autherization/LogIn';
+import LogIn from './authorization/LogIn';
 
 class App extends React.Component {
- constructor(){
-   super();
-   this.state = {
-    classes: [],
-    Class:{
-      classroom_name:'',
-      score:0,
-      highest_score:0
-    }
-   }
- }
+
 
 componentDidMount() {
   axios
