@@ -10,12 +10,6 @@ import Header from './components/header'
 class App extends React.Component {
 
 
-componentDidMount() {
-  axios
-  .get('https://noise-controller.herokuapp.com/api/auth')
-  .then(res => this.setState({ classes: res.data}))
-  .catch(err => console.log(err))
-}
 
 
 render() {
