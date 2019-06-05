@@ -27,6 +27,10 @@ class LogIn extends React.Component {
         })
     };
 
+    registerHandler = () => {
+        this.props.history.push('/register')
+    }
+
     render() {
         return (
             <form onSubmit={this.login}>
