@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { register } from '../actions'
+import { register } from '../actions';
+import {Link} from 'react-router-dom'
 
 class Register extends Component {
     state = {
@@ -61,7 +62,7 @@ class Register extends Component {
                         onChange={this.changeHandler}
                         placeholder='Class Name'
                         />
-                    <button>Sign Up</button>
+                   <Link to='/'> <button>Sign Up</button> </Link>
                 </form>
             </div>
         )

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
-import { login } from '../actions'
+import { login } from '../actions';
+import {Link} from 'react-router-dom'
 
 class LogIn extends React.Component {
     state = {
@@ -48,6 +49,7 @@ class LogIn extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.changeHandler}
                     />
+                    <Link to = '/mainpage'>
                     <button>
                         {this.props.isLoggedIn ? (
                             <Loader type='ThreeDots' color='mediumpurple' height='10' width='20' />
@@ -55,6 +57,7 @@ class LogIn extends React.Component {
                                 'Log In'
                             )}
                     </button>
+                    </Link>
                 </form>
                 <button onClick={this.registerHandler}>Register</button>
             </div>
