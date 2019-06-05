@@ -1,3 +1,3 @@
-import axops from 'axios'
+import axios from 'axios'
 
 // axios.delete//////// /classrooms/:id

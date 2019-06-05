@@ -11,8 +11,6 @@ const Header = () => {
 
             <div className='links'>
                 <NavLink to='/protected'>My Classes</NavLink>
-                <NavLink to='/register'>Sign Up</NavLink>
-                <NavLink to='/login'>Login</NavLink>
             </div>
         </div>
     )

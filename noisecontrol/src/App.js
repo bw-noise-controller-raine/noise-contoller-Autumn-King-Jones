@@ -4,7 +4,8 @@ import './App.css';
 import {Route} from 'react-router-dom';
 import LogIn from './authorization/LogIn';
 import Register from './components/register';
-import mainpage from './components/aquarium'
+import mainpage from './components/aquarium';
+import Header from './components/header'
 
 class App extends React.Component {
 
@@ -20,9 +21,11 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
+     <Header />
      <Route exact path ='/' component = {LogIn} />
      <Route  path ='/register' component = {Register}/>
      <Route path = '/aquarium' component = {mainpage}/>
+     
     </div>
   );
 }
