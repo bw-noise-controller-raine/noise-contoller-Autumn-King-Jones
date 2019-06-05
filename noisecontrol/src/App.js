@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 import {Route} from 'react-router-dom';
 import LogIn from './authorization/LogIn';
+import Register from './components/register'
 
 class App extends React.Component {
 
@@ -18,8 +19,8 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
-     <Route path ='/' component = {LogIn} />
-     <Route exact path ='/'/>
+     <Route exact path ='/' component = {LogIn} />
+     <Route  path ='/register' component = {Register}/>
     </div>
   );
 }

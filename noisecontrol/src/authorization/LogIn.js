@@ -23,7 +23,7 @@ class LogIn extends React.Component {
     login = e => {
         e.preventDefault();
         this.props.login(this.state.credentials).then(() => {
-            this.props.history.push('/register');
+            this.props.history.push('/protected');
         })
     };
 
@@ -33,28 +33,31 @@ class LogIn extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.login}>
-                <input
-                    type='text'
-                    name='username'
-                    value={this.state.credentials.username}
-                    onChange={this.changeHandler}
-                />
+            <div>
+                <form onSubmit={this.login}>
+                    <input
+                        type='text'
+                        name='username'
+                        value={this.state.credentials.username}
+                        onChange={this.changeHandler}
+                    />
 
-                <input
-                    type='password'
-                    name='password'
-                    value={this.state.credentials.password}
-                    onChange={this.changeHandler}
-                />
-                <button>
-                    {this.props.isLoggedIn ? (
-                        <Loader type='ThreeDots' color='mediumpurple' height='10' width='20' />
-                    ) : (
-                            'Log In'
-                        )}
-                </button>
-            </form>
+                    <input
+                        type='password'
+                        name='password'
+                        value={this.state.credentials.password}
+                        onChange={this.changeHandler}
+                    />
+                    <button>
+                        {this.props.isLoggedIn ? (
+                            <Loader type='ThreeDots' color='mediumpurple' height='10' width='20' />
+                        ) : (
+                                'Log In'
+                            )}
+                    </button>
+                </form>
+                <button onClick={this.registerHandler}>Register</button>
+            </div>
         )
     }
 }

@@ -29,7 +29,8 @@ class Register extends Component {
                 .then(() => this.props.history.push('./login'))
             this.setState({
                 username: '',
-                password: ''
+                password: '',
+                ClassName:''
             })
         }
     }
@@ -54,6 +55,12 @@ class Register extends Component {
                         onChange={this.changeHandler}
                         placeholder='Password'
                     />
+                    <input
+                        type='text'
+                        name='classname'
+                        onChange={this.changeHandler}
+                        placeholder='Class Name'
+                        />
                     <button>Sign Up</button>
                 </form>
             </div>
