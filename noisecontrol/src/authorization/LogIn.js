@@ -63,7 +63,7 @@ class LogIn extends React.Component {
                             )}
                     </button>
                    
-                    <button className='RegButton' onClick={this.registerHandler}>Register</button>
+                    <button className='LogButton' onClick={this.registerHandler}>Register</button>
                 </form>
                
             </div>

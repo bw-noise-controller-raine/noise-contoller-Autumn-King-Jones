@@ -19,4 +19,3 @@ return axios
     });
 }
 
-// axios.put////// /classrooms/:id
