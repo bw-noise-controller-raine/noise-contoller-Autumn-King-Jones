@@ -6,9 +6,9 @@ const mainpage = () => {
     <div>
             <div className='mainPage'>
         <div className='links'>
-                <NavLink to ='/addclass'><button>Add A Class</button></NavLink>
-                <NavLink to='/classes'><button>My Classes</button></NavLink>
-                <NavLink to='/updating'><button>Edit Class</button></NavLink>            
+                <NavLink to ='/addclass'><button className='classButtons' >Add A Class</button></NavLink>
+                <NavLink to='/classes'><button className='classButtons'>My Classes</button></NavLink>
+                <NavLink to='/updating'><button className='classButtons'>Edit Class</button></NavLink>            
             </div>
     </div>
     </div>

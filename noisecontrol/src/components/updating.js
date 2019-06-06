@@ -1,7 +1,11 @@
 import React from 'react';
 
 class UpdateClass extends React.Component {
-  
+  constructor(props){
+      super(props);
+      this.state={
+      }
+  }
 
    
 
@@ -16,13 +20,13 @@ class UpdateClass extends React.Component {
                     onChange={this.changeHandler}
                     placeholder='Name'
                     name='name'
-                    value={this.state.name}
+                    value={this.props.name}
                 />
                 <input
                     type='text'
                     onChange={this.changeHandler}
                     placeholder='ClassRoom Name'
-                    value={this.state.classroomName}
+                    value={this.props.classroomName}
                     name='classroomName'
                 />
 
@@ -30,7 +34,7 @@ class UpdateClass extends React.Component {
                     type='text'
                     onChange={this.changeHandler}
                     placeholder='Score'
-                    value={this.state.score}
+                    value={this.props.score}
                     name='score'
                 />
 
@@ -38,7 +42,7 @@ class UpdateClass extends React.Component {
                     type='text'
                     onChange={this.changeHandler}
                     placeholder='Highest Score'
-                    value={this.state.score}
+                    value={this.props.score}
                     name='highestScore'
                 />
                 <button type='submit'> Update A Class</button>

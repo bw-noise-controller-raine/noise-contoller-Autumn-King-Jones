@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class AddClass extends Component {
     constructor(props) {
@@ -41,45 +41,49 @@ class AddClass extends Component {
 
     render() {
         return (
+
             <div className='addClass'>
+                <div className='classContainer'>
+                    <h2>Add A Class</h2>
+                    <div className='formContainer'>
+                    <form onSubmit={this.addClass}>
+                        <input
+                            type='text'
+                            onChange={this.changeHandler}
+                            placeholder='Name'
+                            value={this.state.name}
+                            name='name'
+                        />
 
-                <h2>Add A Class</h2>
-                <form onSubmit={this.addClass}>
-                    <input
-                        type='text'
-                        onChange={this.changeHandler}
-                        placeholder='Name'
-                        value={this.state.name}
-                        name='name'
-                    />
+                        <input
+                            type='text'
+                            onChange={this.changeHandler}
+                            placeholder='ClassRoom Name'
+                            value={this.state.classroomName}
+                            name='classroomName'
+                        />
 
-                    <input
-                        type='text'
-                        onChange={this.changeHandler}
-                        placeholder='ClassRoom Name'
-                        value={this.state.classroomName}
-                        name='classroomName'
-                    />
+                        <input
+                            type='text'
+                            onChange={this.changeHandler}
+                            placeholder='Score'
+                            value={this.state.score}
+                            name='score'
+                        />
 
-                    <input
-                        type='text'
-                        onChange={this.changeHandler}
-                        placeholder='Score'
-                        value={this.state.score}
-                        name='score'
-                    />
-
-                    <input
-                        type='text'
-                        onChange={this.changeHandler}
-                        placeholder='Highest Score'
-                        value={this.state.score}
-                        name='highestScore'
-                    />
-                   <NavLink to='/classes' ><button type='submit'> Add A Class</button></NavLink>
-                </form>
+                        <input
+                            type='text'
+                            onChange={this.changeHandler}
+                            placeholder='Highest Score'
+                            value={this.state.score}
+                            name='highestScore'
+                        />
+                        <NavLink to='/classes' ><button type='submit'> Add A Class</button></NavLink>
+                    </form>
+                </div>
             </div>
-        )
+        </div >
+    )
     }
 }
 
