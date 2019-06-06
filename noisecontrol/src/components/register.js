@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../actions';
-import {Link} from 'react-router-dom'
+
 
 class Register extends Component {
     state = {
@@ -31,7 +31,7 @@ class Register extends Component {
             this.setState({
                 username: '',
                 password: '',
-                ClassName:''
+               
             })
         }
     }
@@ -76,5 +76,4 @@ const mapStateToProps = state => {
     }
 }
 export default connect(mapStateToProps,
-    {register})
-    (Register);
+    {register})(Register);

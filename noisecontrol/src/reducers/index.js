@@ -8,6 +8,7 @@ import {
     REGISTER_SUCCESS,
     ERROR,
     LOADING
+
 }
     from '../actions'
 
@@ -24,6 +25,8 @@ const initialState = {
     classesUpdated: false,
     deletingClasses: false,
     classesDeleted: false,
+    registering: false,
+    credentials: []
 };
 
 const classReducer = (state = initialState, action) => {
@@ -62,6 +65,27 @@ const classReducer = (state = initialState, action) => {
                 fetchingClasses: false,
                 error: true
             }
+
+        case REGISTER_SUCCESS:
+            console.log(action.paylaod);
+        return{
+            ...state,
+            registering: false,
+            credentials: [...state.credentials, action.payload]
+        }
+        
+        case LOADING:
+            console.log(action.payload);
+            return{
+                ...state,
+                registering: true,
+            }
+
+        case ERROR:
+            return{
+                ...state,
+                error: action.payload
+            }   
 
         default:
             return state;
