@@ -5,7 +5,8 @@ const mainpage = () => {
     return (
     <div>
         <div className='links'>
-                <NavLink to='/protected'><button>My Classes</button></NavLink>
+                <NavLink to ='/addclass'><button>Add A Class</button></NavLink>
+                <NavLink to='/classes'><button>My Classes</button></NavLink>
             </div>
         <h1>
             hello

@@ -8,6 +8,7 @@ import mainpage from './components/aquarium';
 import Header from './components/header';
 import UpdateClass from './components/updating';
 import AddClass from './components/addclass';
+import Classes from './components/classes';
 
 class App extends React.Component {
   constructor() {
@@ -55,6 +56,7 @@ render() {
       )}
      />
      <Route path ='/addclass' component = {AddClass} />
+     <Route path = '/classes' component = {Classes}/>
     </div>
   );
 }
