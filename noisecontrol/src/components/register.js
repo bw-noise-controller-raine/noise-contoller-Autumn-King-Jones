@@ -20,14 +20,14 @@ class Register extends Component {
         })
     }
 
-    register = e => {
+    newregister = e => {
         e.preventDefault();
-        if (!this.state.credentials.username || !this.state.credentials.passwords) {
+        if (!this.state.credentials.username || !this.state.credentials.password) {
             alert('Please Enter Correct UserName and Password')
             return null;
         } else {
             this.props.register(this.state.credentials)
-                .then(() => this.props.history.push('./login'))
+                .then(() => this.props.history.push('/'))
             this.setState({
                 username: '',
                 password: '',
@@ -41,7 +41,7 @@ class Register extends Component {
         return (
             <div>
                 <h1>Register Here</h1>
-                <form onSubmit={this.register}>
+                <form onSubmit={this.newregister}>
                     <input
                         type='text'
                         name='username'
@@ -62,7 +62,7 @@ class Register extends Component {
                         onChange={this.changeHandler}
                         placeholder='Class Name'
                         />
-                   <Link to='/'> <button>Sign Up</button> </Link>
+                    <button type='submit'>Sign Up</button> 
                 </form>
             </div>
         )
@@ -76,5 +76,5 @@ const mapStateToProps = state => {
     }
 }
 export default connect(mapStateToProps,
-    {register: register})
+    {register})
     (Register);
