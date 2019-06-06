@@ -24,7 +24,7 @@ class LogIn extends React.Component {
     login = e => {
         e.preventDefault();
         this.props.login(this.state.credentials).then(() => {
-            this.props.history.push('/');
+            this.props.history.push('/mainpage');
         })
     };
 
@@ -49,15 +49,15 @@ class LogIn extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.changeHandler}
                     />
-                    <Link to = '/mainpage'>
-                    <button>
+                    
+                    <button type='submit'>
                         {this.props.isLoggedIn ? (
                             <Loader type='ThreeDots' color='mediumpurple' height='10' width='20' />
                         ) : (
                                 'Log In'
                             )}
                     </button>
-                    </Link>
+                    
                 </form>
                 <button onClick={this.registerHandler}>Register</button>
             </div>

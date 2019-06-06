@@ -4,7 +4,10 @@ import {
     FAILURE,
     FETCHING_CLASSES,
     FETCHING_SUCCESS,
-    FETCHING_FAILURE
+    FETCHING_FAILURE,
+    REGISTER_SUCCESS,
+    ERROR,
+    LOADING
 }
     from '../actions'
 
@@ -34,7 +37,7 @@ const classReducer = (state = initialState, action) => {
         case SUCCESS:
             return {
                 ...state,
-                isLoggedIn: false
+                isLoggingIn: false
             };
 
         case FETCHING_CLASSES:
