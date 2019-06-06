@@ -58,3 +58,10 @@
   justify-content:center;
   letter-spacing:5px;
 }
+
+.LogIn, button{
+  display:flex;
+  flex-direction: row;
+  margin: 0 auto;
+  
+}
