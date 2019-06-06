@@ -39,44 +39,46 @@ class AddClass extends Component {
     };
 
     render() {
-        <div className='addClass'>
+        return (
+            <div className='addClass'>
 
-            <h2>Add A Class</h2>
-            <form onSubmit={this.addClass}>
-                <input
-                    type='text'
-                    onChange={this.changeHandler}
-                    placeholder='Name'
-                    value={this.state.name}
-                    name='name'
-                />
+                <h2>Add A Class</h2>
+                <form onSubmit={this.addClass}>
+                    <input
+                        type='text'
+                        onChange={this.changeHandler}
+                        placeholder='Name'
+                        value={this.state.name}
+                        name='name'
+                    />
 
-                <input
-                    type='text'
-                    onChange={this.changeHandler}
-                    placeholder='ClassRoom Name'
-                    value={this.state.classroomName}
-                    name='classroomName'
-                />
+                    <input
+                        type='text'
+                        onChange={this.changeHandler}
+                        placeholder='ClassRoom Name'
+                        value={this.state.classroomName}
+                        name='classroomName'
+                    />
 
-                <input
-                    type='text'
-                    onChange={this.changeHandler}
-                    placeholder='Score'
-                    value={this.state.score}
-                    name='score'
-                />
+                    <input
+                        type='text'
+                        onChange={this.changeHandler}
+                        placeholder='Score'
+                        value={this.state.score}
+                        name='score'
+                    />
 
-                <input
-                    type='text'
-                    onChange={this.changeHandler}
-                    placeholder='Highest Score'
-                    value={this.state.score}
-                    name='highestScore'
-                />
-                <button type='submit'> Add A Class</button>
-            </form>
-        </div>
+                    <input
+                        type='text'
+                        onChange={this.changeHandler}
+                        placeholder='Highest Score'
+                        value={this.state.score}
+                        name='highestScore'
+                    />
+                    <button type='submit'> Add A Class</button>
+                </form>
+            </div>
+        )
     }
 }
 
