@@ -21,10 +21,11 @@ export const FETCHING_FAILURE = 'FETCHING_FAILURE';
 
 export const getclasses = () => dispatch => {
     dispatch({ type: FETCHING_CLASSES });
-    axios
-        .get('https://noise-controller.herokuapp.com/api/auth')
+    return AuthWithaxios()
+        .get('https://noise-controller.herokuapp.com/api/classrooms')
         .then(res => {
             dispatch({ type: FETCHING_SUCCESS, payload: res.data })
+            
         })
         .catch(error => {
             console.log(error)

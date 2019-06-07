@@ -94,7 +94,7 @@ background-size: cover;
   height: 100vh;
  
   position: relative;
-  background-image: url('https://i.pinimg.com/originals/96/84/60/96846039086cfaed7f1dd3f991459657.jpg');
+  background-image: url('https://i.pinimg.com/originals/70/f8/66/70f8667519bee7dfe0e6b38cabd8265e.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,18 +122,20 @@ background-size: cover;
 
  .addClass {
   height: 100vh;
- 
   position: relative;
-  background-image: url('https://www.wickedwalls.com.au/uploads/2/2/7/6/2276646/s351108049999434943_p1228_i1_w640.jpeg');
+  background-image: url('https://s3.envato.com/files/234715712/Preview/10.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
  }
+
+ 
 
  .formContainer,input {
   margin: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
+  height: 2.5rem;
 
 }

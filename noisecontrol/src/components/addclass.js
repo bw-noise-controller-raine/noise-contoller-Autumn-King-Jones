@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
+import {AuthWithaxios} from '../authwithaxios';
 
 class AddClass extends Component {
     constructor(props) {
@@ -16,16 +17,16 @@ class AddClass extends Component {
         }
     }
 
-    addClass = (e, Class) => {
+    addClass = e => {
         e.preventDefault();
-        axios
+         AuthWithaxios()
             .post('https://noise-controller.herokuapp.com/api/classrooms', {
                 name: this.state.name,
-                classroomName: this.state.classroomName,
+                classroom_name: this.state.classroomName,
                 score: this.state.score,
-                highestScore: this.state.highestScore
+                highest_score: this.state.highestScore
             })
-            .then(res => {
+            .then(res => {console.log(res,'sup')
                 this.setState({
                     classes: res.data
                 })
@@ -54,6 +55,7 @@ class AddClass extends Component {
                             value={this.state.name}
                             name='name'
                         />
+                        <br/>
 
                         <input
                             type='text'
@@ -62,6 +64,7 @@ class AddClass extends Component {
                             value={this.state.classroomName}
                             name='classroomName'
                         />
+                        <br/>
 
                         <input
                             type='text'
@@ -70,6 +73,7 @@ class AddClass extends Component {
                             value={this.state.score}
                             name='score'
                         />
+                        <br/>
 
                         <input
                             type='text'
@@ -78,6 +82,8 @@ class AddClass extends Component {
                             value={this.state.score}
                             name='highestScore'
                         />
+                        <br/>
+
                         <NavLink to='/classes' ><button type='submit'> Add A Class</button></NavLink>
                     </form>
                 </div>

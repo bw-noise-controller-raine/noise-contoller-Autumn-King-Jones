@@ -1,26 +1,17 @@
 import React from 'react';
-import Class from './class';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
+import {getclasses} from '../actions'
+import {connect} from 'react-redux'
+import Classroom from './class';
 
 class Classes extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            classes: [],
-        }
-    }
+   
 
 
 
     componentDidMount() {
-        axios
-            .get('https://noise-controller.herokuapp.com/api/classrooms')
-            .then(res => {
-                this.setState({ classes: res.data });
-                console.log("res", res);
-              })
-            .catch(err => console.log(err))
+    this.props.getclasses()
     }
 
     render() {
@@ -30,14 +21,27 @@ class Classes extends React.Component {
 
                 <ul>
                     {
-                        this.state.classes.map(Class => {
-                            return <Class key={Class.id} Class={Class} />
-                        })
+                        this.props.classes.map(Classroom => {
+                            console.log(Classroom, 'hello')
+                            return(
+                                <li key={Classroom.id}>
+                                    {Classroom.classroom_name}
+                                </li>
+                            
+                            )
+                    })
                     }
                 </ul >
             </div>
         )
     }
 }
-
-export default Classes;
+const mapStateToProps = state => {
+    return{
+     classes: state.classes   
+    }
+}
+export default connect(
+   mapStateToProps,
+   {getclasses} 
+)(Classes)

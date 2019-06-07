@@ -46,12 +46,12 @@ const classReducer = (state = initialState, action) => {
         case FETCHING_CLASSES:
             return {
                 ...state,
-                fetchignClasses: true,
-                classes: action.payload
+                fetchingData: true,
+                
             };
 
         case FETCHING_SUCCESS:
-            console.log(action.payload);
+            console.log('hello',action.payload);
             return {
                 ...state,
                 fetchingClasses: false,
