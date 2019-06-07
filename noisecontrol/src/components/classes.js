@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import {getclasses} from '../actions'
 import {connect} from 'react-redux'
 import Classroom from './class';
+import {withRouter} from 'react-router'
 
 class Classes extends React.Component {
    
@@ -12,14 +13,15 @@ class Classes extends React.Component {
 
     componentDidMount() {
     this.props.getclasses()
+    console.log(this.props.classes)
     }
 
     render() {
         return (
-            <div>
+            <div className='classesContainer'>
                 <NavLink to='/mainpage'><button>Aquarium</button></NavLink>
-
-                <ul>
+                <div className='classlist' >
+                <ul >
                     {
                         this.props.classes.map(Classroom => {
                             console.log(Classroom, 'hello')
@@ -32,6 +34,7 @@ class Classes extends React.Component {
                     })
                     }
                 </ul >
+                </div>
             </div>
         )
     }
@@ -41,7 +44,7 @@ const mapStateToProps = state => {
      classes: state.classes   
     }
 }
-export default connect(
+export default withRouter (connect(
    mapStateToProps,
    {getclasses} 
-)(Classes)
+)(Classes))

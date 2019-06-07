@@ -2,6 +2,10 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import {AuthWithaxios} from '../authwithaxios';
+import {addclass} from '../actions';
+import {connect} from 'react-redux';
+import { withRouter } from "react-router";
+
 
 class AddClass extends Component {
     constructor(props) {
@@ -17,24 +21,40 @@ class AddClass extends Component {
         }
     }
 
-    addClass = e => {
+    // addClass = e => {
+    //     e.preventDefault();
+    //      AuthWithaxios()
+    //         .post('https://noise-controller.herokuapp.com/api/classrooms', {
+    //             name: this.state.name,
+    //             classroom_name: this.state.classroomName,
+    //             score: this.state.score,
+    //             highest_score: this.state.highestScore
+    //         })
+    //         .then(res => {console.log(res,'sup')
+    //             this.setState({
+    //                 classes: res.data
+    //             })
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    // }
+
+    addClassroom = e =>{
         e.preventDefault();
-         AuthWithaxios()
-            .post('https://noise-controller.herokuapp.com/api/classrooms', {
-                name: this.state.name,
-                classroom_name: this.state.classroomName,
-                score: this.state.score,
-                highest_score: this.state.highestScore
-            })
-            .then(res => {console.log(res,'sup')
-                this.setState({
-                    classes: res.data
-                })
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        const NewClass = {
+            classroom_name: this.state.classroomName,
+            highest_score: 0,
+            // user_id: localStorage.getItem('id'),
+            score: 0,
+            date:Date.now()
+        }
+        this.props.addclass(NewClass)
+        this.props.history.push('/classes')
+
+        
     }
+
 
     changeHandler = e => {
         this.setState({ [e.target.name]: e.target.value })
@@ -47,12 +67,12 @@ class AddClass extends Component {
                 <div className='classContainer'>
                     <h2>Add A Class</h2>
                     <div className='formContainer'>
-                    <form onSubmit={this.addClass}>
+                    <form onSubmit={this.addClassroom}>
                         <input
                             type='text'
                             onChange={this.changeHandler}
                             placeholder='Name'
-                            value={this.state.name}
+                            value={this.props.name}
                             name='name'
                         />
                         <br/>
@@ -61,7 +81,7 @@ class AddClass extends Component {
                             type='text'
                             onChange={this.changeHandler}
                             placeholder='ClassRoom Name'
-                            value={this.state.classroomName}
+                            value={this.props.classroom_name}
                             name='classroomName'
                         />
                         <br/>
@@ -70,7 +90,7 @@ class AddClass extends Component {
                             type='text'
                             onChange={this.changeHandler}
                             placeholder='Score'
-                            value={this.state.score}
+                            value={this.props.score}
                             name='score'
                         />
                         <br/>
@@ -79,13 +99,14 @@ class AddClass extends Component {
                             type='text'
                             onChange={this.changeHandler}
                             placeholder='Highest Score'
-                            value={this.state.score}
+                            value={this.props.highest_score}
                             name='highestScore'
                         />
                         <br/>
-
-                        <NavLink to='/classes' ><button type='submit'> Add A Class</button></NavLink>
+                        <button className='addButton' type='submit'> Add A Class</button>
                     </form>
+                   
+
                 </div>
             </div>
         </div >
@@ -93,4 +114,12 @@ class AddClass extends Component {
     }
 }
 
-export default AddClass;
+const mapStateToProps = state => {
+    return{
+     classes: state.classes   
+    }
+}
+export default withRouter (connect(
+   mapStateToProps,
+   {addclass} 
+)(AddClass))

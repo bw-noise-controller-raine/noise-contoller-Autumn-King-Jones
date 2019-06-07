@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 import { login } from '../actions';
+import {withRouter} from 'react-router'
 
 
 class LogIn extends React.Component {
@@ -76,7 +77,7 @@ const mapStateToProps = state => ({
     isLoggedIn: state.isLoggedIn
 });
 
-export default connect(
+export default withRouter( connect(
     mapStateToProps,
     { login }
-)(LogIn)
+)(LogIn))
