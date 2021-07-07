@@ -1,0 +1,187 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 70vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+.App{
+  height:100vh;
+}
+
+
+.container{
+  display:flex;
+  justify-content:center;
+  height:100%;
+  background-color:limegreen;
+  width:100%;
+  margin: 0 auto;
+}
+
+
+.Form{
+  border: 1px solid rgb(7, 7, 117);
+  display:flex;
+  flex-direction: 'column';
+  height: 300px;
+  justify-content:center;
+  width:300px;
+  align-items: center;
+  position: relative;
+background-image: url('https://www.wickedwalls.com.au/uploads/2/2/7/6/2276646/s351108049999434943_p1228_i1_w640.jpeg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.formInput{
+  display:flex;
+  flex-direction: 'column';
+  border-radius: 5px;
+  padding:5px;
+  width:205px;
+  font-size:15px;
+}
+
+.header{
+  font-family: 'Acme', sans-serif;
+  font-size:2.5rem;
+  align-items:center;
+  display:flex;
+  justify-content:center;
+  letter-spacing:5px;
+  background-color: limegreen;
+  color:rgb(17, 95, 240)
+}
+
+
+
+.LogButton{
+  margin: 0 25px;
+  flex-direction: row;
+  background-color: rgb(14, 238, 163);
+  color:rgb(7, 7, 117);
+  border: 1px solid rgb(189, 60, 240);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Acme', sans-serif;
+}
+
+.LogButton:hover {
+  background-color: #f7a8b7;
+  opacity: 50%;
+  color: white;
+  cursor: pointer;
+ }
+
+/* mainpage */
+
+.mainPage {
+  height: 100vh;
+ 
+  position: relative;
+  background-image: url('https://i.pinimg.com/originals/70/f8/66/70f8667519bee7dfe0e6b38cabd8265e.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ .links{
+   display: flex;
+   justify-content:space-around;
+   padding:10px 0;
+   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+ }
+
+ .links,button{
+  font-family: 'Acme', sans-serif;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+ }
+
+ .classButtons {
+  background-color: mediumpurple;
+  color: white;
+  padding: 3px 15px;
+  font-size: 12px;
+ }
+
+ .addClass {
+  height: 100vh;
+  position: relative;
+  background-image: url('https://s3.envato.com/files/234715712/Preview/10.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ .addButton{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+  background-color:mediumpurple;
+  color:white;
+  text-decoration:none;
+  border:none;
+
+ }
+
+ .formContainer,forminput {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 2.5rem;
+
+}
+
+
+.update{
+  height: 100vh;
+  position: relative;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac29f9ec-86fb-41c5-8021-4560d3616b68/d2h5hnp-2a1fd2a0-eeff-4125-8d0f-a81c5c4eab9a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjMjlmOWVjLTg2ZmItNDFjNS04MDIxLTQ1NjBkMzYxNmI2OFwvZDJoNWhucC0yYTFmZDJhMC1lZWZmLTQxMjUtOGQwZi1hODFjNWM0ZWFiOWEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.hAXQwR0J2Aezz5aAMekHBrmwroaBon13lzfSM3lZ-_4');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.update,form{
+  display:flex;
+  flex-direction:column;
+
+}
+ .updateButton{
+  width:200px;
+ }
+
+ .classesContainer{
+  height: 100vh;
+  position: relative;
+  background-image: url('https://dumielauxepices.net/sites/default/files/blue-water-clipart-ppt-background-863034-7683893.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ .classlist{
+   color:rgb(90, 211, 195);
+   font-size:35px;
+   font-family: 'Acme', sans-serif;
+
+ }
+
+
